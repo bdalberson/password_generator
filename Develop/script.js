@@ -10,6 +10,8 @@ const password_criteria = {
   special_characters_defined : false
 };
 
+lowerAlpha = ["a","b","c","d","q","w","e","r","t","y","u","i","o","p","z","x","c","v","b","n","m"]
+upperAlpha = ["Z","X","C","V","B","N","M","A","S","D","F","G","H","J","K","L","Q","W","E","R","T","Y","U","I","O","P"]
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
