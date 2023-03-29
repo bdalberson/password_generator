@@ -12,6 +12,8 @@ const password_criteria = {
 
 lowerAlpha = ["a","b","c","d","q","w","e","r","t","y","u","i","o","p","z","x","c","v","b","n","m"]
 upperAlpha = ["Z","X","C","V","B","N","M","A","S","D","F","G","H","J","K","L","Q","W","E","R","T","Y","U","I","O","P"]
+numeric = ["1","2","3","4","5","6","7","8","9","0"]
+special = ['!','"',"'",'#',"$","%","&","(",")","*","+",",","-",".","/",":",":",";","<",">","=","?","@","[","]","^","_","`","{","}","|","~"]
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
