@@ -10,12 +10,12 @@ const password_criteria = {
   special_characters_defined : false
 };
 
-lowerAlpha = ["a","b","c","d","q","w","e","r","t","y","u","i","o","p","z","x","c","v","b","n","m"]
+lowerAlpha = ["a","s","d","f","g","h","j","k","l","q","w","e","r","t","y","u","i","o","p","z","x","c","v","b","n","m"]
 upperAlpha = ["Z","X","C","V","B","N","M","A","S","D","F","G","H","J","K","L","Q","W","E","R","T","Y","U","I","O","P"]
 numeric = ["1","2","3","4","5","6","7","8","9","0"]
 special = ['!','"',"'",'#',"$","%","&","(",")","*","+",",","-",".","/",":",":",";","<",">","=","?","@","[","]","^","_","`","{","}","|","~"]
 
-passwordChars = lowerAlpha
+passwordChars = []
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -39,7 +39,11 @@ function get_length(){
     
   }
   else{
-    uppercase_defined = "Do you want capitals?";
+    lowercase_defined = "Do you want lowercase?";
+      if (confirm(lowercase_defined) == true){
+      passwordChars = passwordChars.concat(lowerAlpha)
+      }
+      uppercase_defined = "Do you want capitals?";
       if (confirm(uppercase_defined) == true){
       passwordChars = passwordChars.concat(upperAlpha)
       }
@@ -51,7 +55,7 @@ function get_length(){
       if (confirm(special_defined) == true){
         passwordChars = passwordChars.concat(special)
         }
-      
+      console.log(passwordChars)
+      console.log(passwordChars.length)
   }
-  console.log(passwordChars)
 }
