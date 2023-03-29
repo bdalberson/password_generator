@@ -5,7 +5,6 @@
 
 const password_criteria = {
   length_defined : 8,
-  lowercase_defined : false,
   uppercase_defined : false,
   numeric_defined : false, 
   special_characters_defined : false
@@ -32,5 +31,11 @@ function get_length(){
   if(length_defined < 8 || length_defined > 120) {
     alert("Password must be between 8 and 120 characters 😃");
   }
-console.log(length_defined)
+  lowercase_defined = "Do you want capitals?";
+  if (confirm(uppercase_defined) == true){
+    uppercase_defined = true
+  }
+  else{
+    uppercase_defined = false
+  }
 }
