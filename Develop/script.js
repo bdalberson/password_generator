@@ -15,6 +15,8 @@ upperAlpha = ["Z","X","C","V","B","N","M","A","S","D","F","G","H","J","K","L","Q
 numeric = ["1","2","3","4","5","6","7","8","9","0"]
 special = ['!','"',"'",'#',"$","%","&","(",")","*","+",",","-",".","/",":",":",";","<",">","=","?","@","[","]","^","_","`","{","}","|","~"]
 
+passwordChars = lowerAlpha
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -39,18 +41,17 @@ function get_length(){
   else{
     uppercase_defined = "Do you want capitals?";
       if (confirm(uppercase_defined) == true){
-      uppercase_defined = true
-    }
-      else{
-      uppercase_defined = false
-    }   
-  
-  numeric_defined = "Do you want numbers?";
+      passwordChars = passwordChars.concat(upperAlpha)
+      }
+      numeric_defined = "Do you want numbers?";
       if (confirm(numeric_defined) == true){
-        numeric_defined = true
-    }
-      else{
-        numeric_defined = false
-    }   
+        passwordChars = passwordChars.concat(numeric)
+      }
+      special_defined = "Do you want specials?";
+      if (confirm(special_defined) == true){
+        passwordChars = passwordChars.concat(special)
+        }
+      
   }
+  console.log(passwordChars)
 }
