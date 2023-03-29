@@ -28,6 +28,9 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 function get_length(){
-length_defined = prompt("Please enter a length between 8-120");
-console.log(password_criteria.length_defined)
+  length_defined = prompt("Please enter a length between 8-120");
+  if(length_defined < 8 || length_defined > 120) {
+    alert("Password must be between 8 and 120 characters 😃");
+  }
+console.log(length_defined)
 }
