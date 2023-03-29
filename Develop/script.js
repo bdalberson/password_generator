@@ -28,9 +28,9 @@ generateBtn.addEventListener("click", writePassword);
 
 function get_length(){
   length_defined = prompt("Please enter a length between 8-120");
-  length_verifier: if(length_defined < 8 || length_defined > 120) {
+  if(length_defined < 8 || length_defined > 120) {
     alert("Password must be between 8 and 120 characters 😃");
-    break length_verifier;
+    
   }
   else{
     uppercase_defined = "Do you want capitals?";
@@ -40,7 +40,7 @@ function get_length(){
       else{
       uppercase_defined = false
     }   
-  }
+  
   numeric_defined = "Do you want numbers?";
       if (confirm(numeric_defined) == true){
         numeric_defined = true
@@ -48,4 +48,5 @@ function get_length(){
       else{
         numeric_defined = false
     }   
+  }
 }
