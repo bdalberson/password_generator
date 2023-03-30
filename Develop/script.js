@@ -1,14 +1,5 @@
 // Assignment code here
-// go through the user stories and make promopts
-// make a Class that stores all the options that the user chooses during the prompts
-// at the end the class will be used to generate the password based on the users selections.  
 
-const password_criteria = {
-  length_defined : 8,
-  uppercase_defined : false,
-  numeric_defined : false, 
-  special_characters_defined : false
-};
 
 lowerAlpha = ["a","s","d","f","g","h","j","k","l","q","w","e","r","t","y","u","i","o","p","z","x","c","v","b","n","m"]
 upperAlpha = ["Z","X","C","V","B","N","M","A","S","D","F","G","H","J","K","L","Q","W","E","R","T","Y","U","I","O","P"]
@@ -55,7 +46,7 @@ function get_length(){
       if (confirm(special_defined) == true){
         passwordChars = passwordChars.concat(special)
         }
-      console.log(passwordChars)
-      console.log(passwordChars.length)
+        console.log(passwordChars[Math.floor(Math.random()*passwordChars.length)])
+      
   }
 }
