@@ -13,44 +13,37 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
-function get_length(){
-  length_defined = prompt("Please enter a length between 8-120");
-  if(length_defined < 8 || length_defined > 120) {
-    alert("Password must be between 8 and 120 characters 😃");
-    
-  }
-  else{
-    lowercase_defined = "Do you want lowercase?";
-      if (confirm(lowercase_defined) == true){
-      passwordChars = passwordChars.concat(lowerAlpha)
-      }
+   length_defined = prompt("Please enter a length between 8-120");
+    if(length_defined < 8 || length_defined > 120) {
+    alert("Password must be between 8 and 120 characters 😃")
+    }
+    else{
+      lowercase_defined = "Do you want lowercase?";
+        if (confirm(lowercase_defined) == true){
+          passwordChars = passwordChars.concat(lowerAlpha)
+        }
       uppercase_defined = "Do you want capitals?";
-      if (confirm(uppercase_defined) == true){
-      passwordChars = passwordChars.concat(upperAlpha)
-      }
+        if (confirm(uppercase_defined) == true){
+        passwordChars = passwordChars.concat(upperAlpha)
+        }
       numeric_defined = "Do you want numbers?";
-      if (confirm(numeric_defined) == true){
+        if (confirm(numeric_defined) == true){
         passwordChars = passwordChars.concat(numeric)
       }
       special_defined = "Do you want specials?";
-      if (confirm(special_defined) == true){
+        if (confirm(special_defined) == true){
         passwordChars = passwordChars.concat(special)
-        }
-        for (let i = 0; i < length_defined; i++) { 
-         
-         password = passwordChars[Math.floor(Math.random()*passwordChars.length)];
-         answer.push(password)
-        }
-        console.log(answer)
+      }
+      }
+    for (let i = 0; i < length_defined; i++) { 
+      answerIndex = passwordChars[Math.floor(Math.random()*passwordChars.length)];
+      answer.push(answerIndex)
+    }
+    var password = answer;
+    var passwordText = document.querySelector("#password");
+    passwordText.value = password;
   }
-}
+
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
