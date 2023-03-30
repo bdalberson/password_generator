@@ -46,7 +46,9 @@ function get_length(){
       if (confirm(special_defined) == true){
         passwordChars = passwordChars.concat(special)
         }
-        console.log(passwordChars[Math.floor(Math.random()*passwordChars.length)])
-      
+        for (let i = 0; i < length_defined; i++) { 
+        // console.log(passwordChars[Math.floor(Math.random()*passwordChars.length)]);
+            console.log("write this " + length_defined + " times")
+        }
   }
 }
