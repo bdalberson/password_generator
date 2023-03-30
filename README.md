@@ -1,42 +1,72 @@
 # Password Generator Starter Code
-This module's Challenge requires you to create an application that an employee can use to generate a random password based on criteria they've selected. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished user interface that is responsive, ensuring that it adapts to multiple screen sizes. This module's coursework will teach you all the skills you need to succeed in this assignment.
-The password can include special characters. If you're unfamiliar with these, see this list of Password Special Characters from the OWASP Foundation.
-User Story
 
-AS AN employee with access to sensitive data
-I WANT to randomly generate a password that meets certain criteria
-SO THAT I can create a strong password that provides greater security
-Acceptance Criteria
+| Technology Used         | Resource URL           | 
+| ------------- |:-------------:| 
+| HTML    | [https://developer.mozilla.org/en-US/docs/Web/HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) | 
+| CSS     | [https://developer.mozilla.org/en-US/docs/Web/CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)      |   
+| Git | [https://git-scm.com/](https://git-scm.com/)     |    
 
-GIVEN I need a new, secure password
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters
-WHEN asked for character types to include in the password
-THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
-WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
-WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
-Mock-Up
+## Description 
 
-The following image shows the web application's appearance and functionality:
-A screenshot displays a sample password generator.
+[Visit the Deployed Site](https://bdalberson.github.io/password_generator/)
 
-How to Complete the Challenge
 
-Follow these steps to complete the challenge:
- important
-Make sure to clone the starter code repository and make your own repository with the starter code. Do not fork the starter code repository!
-Clone the starter code.
-Modify the code to meet the Acceptance Criteria.
-Ensure that your work meets the full list of grading requirements below.
-Reach out to your classmates and instructional support team for help if you need it.
-Follow the submission instructions.
- note
-After this module, the preceding steps will not be included in Challenge instructions in order to simulate a typical work experience where the developer determines how to solve an issue on their own.
+
+## Code Refactor Example
+
+
+Below is the main conditional that starts off by getting user input to begin making the password, it verifies a valid entry was entered and got me some good practice on how to use prompts, alerts and confirms.
+
+```javascript
+length_defined = prompt("Please enter a length between 8-120");
+   // prompts user for length when clicked and stores value
+    if(length_defined < 8 || length_defined > 120) {
+    alert("Password must be between 8 and 120 characters 😃")
+    // making sure the correct length is entered
+    }
+```
+
+Below is a little piece of magic that converts the selected characters into a randoom jumble of characters at a specified amount of characters:
+
+```javascript
+for (let i = 0; i < length_defined; i++) { //generates random chars
+      answerIndex = passwordChars[Math.floor(Math.random()*passwordChars.length)];
+      //adds random characters based on criteria
+      answer.push(answerIndex);
+      // makes a new array with all the random chars
+    }
+    var password = answer.join(''); //removes commas from random chars array
+
+```
+
+
+## Usage 
+
+Just head to the site, touch the generate button and select a number between 8-120.  After verifying which type of characters you wuold like to use it will display a nice randomly generated string for you to copy paste into the browser of your choice.
+
+## Learning Points 
+
+
+This was a refactor.  I struggled quite a bit with the parts I didn't write myself.  I will have to learn to get better at understanding that. Learning to generate random elements was fun, will be of great use in a lot of projects particulary gaming or crypto.
+
+
+## Author Info
+
+QA professional turning into coder 
+
+* [Portfolio](https://bdalberson.github.io/Course2Biopage/)
+* [LinkedIn](https://www.linkedin.com/in/brian-alberson-464b2271/)
+* [Github](https://github.com/bdalberson)
+```
+
+## Credits
+
+
+Many thanks to Kaiden and Austin for giving me confidence and helping me out when I couldn't figure something out.  
+
+---
+
+## Tests
+Tested numbers outside thee expected range, no character selections, each different option set, works on mobile. 
+
+---
