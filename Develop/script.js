@@ -5,8 +5,8 @@ lowerAlpha = ["a","s","d","f","g","h","j","k","l","q","w","e","r","t","y","u","i
 upperAlpha = ["Z","X","C","V","B","N","M","A","S","D","F","G","H","J","K","L","Q","W","E","R","T","Y","U","I","O","P"]
 numeric = ["1","2","3","4","5","6","7","8","9","0"]
 special = ['!','"',"'",'#',"$","%","&","(",")","*","+",",","-",".","/",":",":",";","<",">","=","?","@","[","]","^","_","`","{","}","|","~"]
-
 passwordChars = []
+answer = [] 
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -47,8 +47,10 @@ function get_length(){
         passwordChars = passwordChars.concat(special)
         }
         for (let i = 0; i < length_defined; i++) { 
-        // console.log(passwordChars[Math.floor(Math.random()*passwordChars.length)]);
-            console.log("write this " + length_defined + " times")
+         
+         password = passwordChars[Math.floor(Math.random()*passwordChars.length)];
+         answer.push(password)
         }
+        console.log(answer)
   }
 }
