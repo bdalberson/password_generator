@@ -37,13 +37,9 @@ function writePassword() {
       }
     for (let i = 0; i < length_defined; i++) { 
       answerIndex = passwordChars[Math.floor(Math.random()*passwordChars.length)];
-      answer.push(answerIndex)
+      answer.push(answerIndex);
     }
-    var password = answer;
+    var password = answer.join('');
     var passwordText = document.querySelector("#password");
     passwordText.value = password;
   }
-
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
